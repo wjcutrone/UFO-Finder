@@ -1,1 +1,2 @@
-# javascript-challenge
+# Alien Eye Witness Reports
+The objective of this repository is to dynamically create a table on a webpage from a very large dataset. The dataset is too large to search through manually and would be very incovienient for users to navigate. Therefore, the goal is to create a organized table that users can filter to get table data for specific values. This will be accomplished using HTML, CSS, JavaScript and D3.js.
