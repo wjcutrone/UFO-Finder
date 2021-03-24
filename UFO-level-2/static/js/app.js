@@ -5,7 +5,7 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // create a variable to select the button
-// var button = d3.select("#filter-btn");
+var button = d3.select("#filter-btn");
 
 //variable to select the form
 // var form = d3.select("form");
