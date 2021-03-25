@@ -17,7 +17,7 @@ function runEnter() {
 	// first prevent the page from refreshing 
 	d3.event.preventDefault();
 
-	//next, select input element
+	//next, select input html element
 	var inputElement = d3.select("#datetime");
 
 	//then the value of the input element
