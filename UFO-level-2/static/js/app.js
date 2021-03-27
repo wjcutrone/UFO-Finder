@@ -26,12 +26,18 @@ function updateFilter() {
     // first prevent the page from refreshing 
     d3.event.preventDefault();
 
-    tbody.html("");
+    // var changedFilters = d3.selectAll("input") 
 
+    // changedFilters.forEach(instance => {
+    //     lookingfor = 
+    // })
+    //reset the html code
+    tbody.html("");
+    //function to apply needed filters
     const create_filter = (key) => {
 
-        lookingfor = d3.select(`#${key}`).property("value");
-
+        const lookingfor = d3.select(`#${key}`).property("value");
+        console.log(lookingfor);
         const filter = (observed) => {
 
             if (lookingfor === "") {
@@ -52,7 +58,7 @@ function updateFilter() {
     const country_filter = create_filter("country");
     const shape_filter = create_filter("shape");
     
-    filtered_data = tableData.filter(date_filter);
+    var filtered_data = tableData.filter(date_filter);
     filtered_data = filtered_data.filter(city_filter);
     filtered_data = filtered_data.filter(state_filter);
     filtered_data = filtered_data.filter(country_filter);

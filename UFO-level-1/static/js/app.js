@@ -17,6 +17,7 @@ function runEnter() {
 	// first prevent the page from refreshing 
 	d3.event.preventDefault();
 
+
 	//next, select input html element
 	var inputElement = d3.select("#datetime");
 
@@ -29,7 +30,8 @@ function runEnter() {
 
 	//create a variable for the table body
 	var tbody = d3.select("tbody");
-
+	tbody.html("");
+	
 	//append new information table
 	filteredData.forEach(instance => {
 		var row = tbody.append("tr");
