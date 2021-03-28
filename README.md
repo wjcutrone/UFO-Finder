@@ -5,5 +5,7 @@ The repository contains two directories, one called UFO-level-1, and one called 
 
 ![level1.png](UFO-level-1/static/images/level1.png)
 
-The second directory, UFO-level-2, contains code for a webapp that performs a similar function. However, instead of just accepting one filter, there are now five different filters that users can filter data by. The user also has the choice of applying just one filter or applying any combination of the 5 different filters. 
+The second directory, UFO-level-2, contains code for a webapp that performs a similar function. However, instead of just accepting one filter, there are now five different filters that users can filter data by. The user also has the choice of applying just one filter or applying any combination of the 5 different filters. An example of this version of the webapp being deployed can be seen below.
+
+![level2.png](UFO-level-2/static/images/level2.png)
 
