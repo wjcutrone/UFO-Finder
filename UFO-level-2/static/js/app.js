@@ -5,7 +5,9 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 // create a variable for the button
-var button = d3.select("#filter-btn");
+var fbutton = d3.select("#filter-btn");
+var rbutton = d3.select("#reset-btn");
+
 
 //Build a runEnter function when the user submits entry
 function updateTable(filtered_data) {
@@ -64,16 +66,41 @@ function updateFilter() {
 };
 
 
-
-//create the event handler
+//create the event handlers
 d3.selectAll("input").on("change", updateFilter);
-button.on("click", updateFilter);
+fbutton.on("click", updateFilter);
+rbutton.on("click", resetTable)
+
 
 window.onload = (event) => {
     updateTable(tableData);
 };
 
 
+//Added Reset Button Code
+
+//Have the whole table load at beginning
+function homeData(instance) {
+	const defaultData = tableData
+	tableData.forEach(instance => {
+		var row = tbody.append("tr");
+		Object.entries(instance).forEach(([key, value]) => {
+		var cell = row.append("td");
+		cell.text(value);
+		});
+	});
+};
+
+//Building the reset function
+function resetTable() {
+	// first prevent the page from refreshing 
+	d3.event.preventDefault();
+	//create a variable for the table body, and have the table body clear out when reseting
+	var tbody = d3.select("tbody");
+	tbody.html("");
+	//run the homedata function to fill the table with the default values
+	homeData(tableData);
+};
 
 
 
