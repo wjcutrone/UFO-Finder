@@ -11,12 +11,29 @@ var form = d3.select("form");
 button.on("click", runEnter);
 form.on("submit", runEnter);
 
+//create tbody variable
+var tbody = d3.select("tbody");
+tbody.html("");
+	
+//Have the whole table load at beginning
+function homeData(instance) {
+	const defaultData = tableData
+	tableData.forEach(instance => {
+		var row = tbody.append("tr");
+		Object.entries(instance).forEach(([key, value]) => {
+		var cell = row.append("td");
+		cell.text(value);
+		});
+	});
+};
+
+homeData(tableData);
+
 //Building the runEnter function
 function runEnter() {
 
 	// first prevent the page from refreshing 
 	d3.event.preventDefault();
-
 
 	//next, select input html element
 	var inputElement = d3.select("#datetime");

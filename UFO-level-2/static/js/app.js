@@ -25,12 +25,7 @@ function updateTable(filtered_data) {
 function updateFilter() {
     // first prevent the page from refreshing 
     d3.event.preventDefault();
-
-    // var changedFilters = d3.selectAll("input") 
-
-    // changedFilters.forEach(instance => {
-    //     lookingfor = 
-    // })
+    
     //reset the html code
     tbody.html("");
     //function to apply needed filters
