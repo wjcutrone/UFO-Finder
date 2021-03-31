@@ -1,15 +1,18 @@
 // from data.js
 var tableData = data;
 
-// create a variable to select the button
-var button = d3.select("#filter-btn");
+// create variables to select the buttons
+var fbutton = d3.select("#filter-btn");
+var rbutton = d3.select("#reset-btn");
 
 //variable to select the form
 var form = d3.select("form");
 
 //create event handlers
-button.on("click", runEnter);
+fbutton.on("click", runEnter);
 form.on("submit", runEnter);
+rbutton.on("click", resetTable)
+
 
 //create tbody variable
 var tbody = d3.select("tbody");
@@ -59,4 +62,14 @@ function runEnter() {
 	});
 };
 
+//Building the reset function
+function resetTable() {
+	// first prevent the page from refreshing 
+	d3.event.preventDefault();
+	//create a variable for the table body, and have the table body clear out when reseting
+	var tbody = d3.select("tbody");
+	tbody.html("");
+	//run the homedata function to fill the table with the default values
+	homeData(tableData);
+};
 
